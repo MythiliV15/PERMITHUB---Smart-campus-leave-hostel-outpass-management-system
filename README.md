@@ -84,9 +84,9 @@ CREATE DATABASE smart_permithub;
 ```bash
 cd backend
 # Create a .env file with the following keys:
-DB_URL=jdbc:mysql://localhost:3306/smart_permithub?createDatabaseIfNotExist=true
-DB_USERNAME=root
-DB_PASSWORD=your_password
+DB_URL=jdbc:postgresql://db.mxpsiupjzwqnvakrwbrk.supabase.co:5432/postgres
+DB_USERNAME=postgres
+DB_PASSWORD=your_supabase_password
 JWT_SECRET=your_super_secret_key
 MAIL_USERNAME=your_email
 MAIL_PASSWORD=your_app_password

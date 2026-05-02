@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import java.time.LocalDateTime;
 
 @Entity
@@ -45,7 +47,8 @@ public class FacultyDetails {
     @JoinColumn(name = "advisor_department_id")
     private Department advisorDepartment;
 
-    @Column(name = "event_types", columnDefinition = "JSON")
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "event_types")
     private String eventTypes;
 
     @CreationTimestamp
