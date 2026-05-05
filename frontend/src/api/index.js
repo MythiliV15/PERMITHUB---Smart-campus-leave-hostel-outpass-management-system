@@ -3,7 +3,7 @@ import { store } from '../store/store'
 import { logout } from '../store/slices/authSlice'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL || '/api',
   headers: { 'Content-Type': 'application/json' },
 })
 
@@ -88,8 +88,8 @@ export const outpassApi = {
 
 // Parent (no auth)
 export const parentApi = {
-  getDetails: (token) => axios.get(`/api/parent/outpass/${token}`),
-  action: (token, data) => axios.post(`/api/parent/outpass/${token}/action`, data),
+  getDetails: (token) => api.get(`/parent/outpass/${token}`),
+  action: (token, data) => api.post(`/parent/outpass/${token}/action`, data),
 }
 
 // Notifications
